@@ -1,0 +1,473 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipal Engineering Office - Baras, Rizal</title>
+    <style>
+        :root {
+            --primary: #db1616;
+            --secondary: #e9f2ff;
+            --accent: #ff8c00;
+            --dark: #333;
+            --light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #db1616);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        .office-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .office-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            padding: 1rem;
+        }
+        
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('welcome.JPG');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .permits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+            gap: 1.5rem;
+        }
+        
+        .permit-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .permit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .permit-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .permit-info {
+            padding: 1.5rem;
+        }
+        
+        .permit-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .permit-desc {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #003d82;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 976px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Modal styles for document viewer */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            margin: 5% auto;
+            width: 80%;
+            max-width: 900px;
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--accent);
+        }
+        
+        #modal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #modal-pdf {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="barasLogo1.png" alt="Official logo of Baras, Rizal municipality featuring the town's iconic landmarks and the year it was established" class="logo-img">
+                    <div>
+                        <div class="office-title">Municipality of Baras, Rizal</div>
+                        <div class="office-subtitle">Municipal Engineering Office</div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div>Email: barasengineering1970@gmail.com</div>
+                    <div>Phone: (02) 8424-5250 </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#permits">Permit Requirements</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Municipal Engineering Office</h1>
+                <p>Dedicated to providing efficient public service and ensuring compliance with municipal ordinances for construction and development projects in Baras, Rizal.</p>
+            </div>
+        </section>
+        
+        <section id="permits" class="container">
+            <h2 class="section-title">Available Permits</h2>
+            <div class="permits-grid">
+                <!-- Building Permit -->
+                <div class="permit-card">
+                    <img src="requirements/building-permit.png" alt="Construction workers at a building site in Baras, Rizal with partially completed residential structure in background" class="permit-image">
+                    <div class="permit-info">
+                        <h3 class="permit-name">Building Permit</h3>
+                        <p class="permit-desc">Required for construction, alteration, or repair of buildings within Baras municipality.</p>
+                        <a href="#building-permit-doc" class="btn" onclick="showDocument('Building Permit', 'building.permit.pdf', 'pdf')">View Requirements</a>
+                    </div>
+                </div>
+                
+                <!-- Occupancy Permit -->
+                <div class="permit-card">
+                    <img src="requirements/occupancy-permit.png" alt="Modern residential home in Baras, Rizal ready for occupancy with landscaped front yard" class="permit-image">
+                    <div class="permit-info">
+                        <h3 class="permit-name">Occupancy Permit</h3>
+                        <p class="permit-desc">Certifies that a building complies with codes and is ready for occupancy.</p>
+                        <a href="#occupancy-permit-doc" class="btn" onclick="showDocument('Occupancy Permit', 'occupancy.permit.pdf', 'pdf')">View Requirements</a>
+                    </div>
+                </div>
+                
+                <!-- Fencing Permit -->
+                <div class="permit-card">
+                    <img src="requirements/fencing-permit.jpg" alt="Newly constructed perimeter fence around a property in Baras showing typical fencing materials" class="permit-image">
+                    <div class="permit-info">
+                        <h3 class="permit-name">Fencing Permit</h3>
+                        <p class="permit-desc">Required for construction of fences around properties in Baras municipality.</p>
+                        <a href="#fencing-permit-doc" class="btn" onclick="showDocument('Fencing Permit', 'fencing.permit.pdf', 'pdf')">View Requirements</a>
+                    </div>
+                </div>
+                
+                <!-- Ground Preparation Permit -->
+                <div class="permit-card">
+                    <img src="requirements/ground-preparation.jpg" alt="Excavation equipment preparing a construction site in Baras showing grading work" class="permit-image">
+                    <div class="permit-info">
+                        <h3 class="permit-name">Ground Preparation Permit</h3>
+                        <p class="permit-desc">Required for land grading, excavation, and site preparation activities.</p>
+                        <a href="#ground-prep-permit-doc" class="btn" onclick="showDocument('Ground Preparation Permit', 'gnd.prep.pdf', 'pdf')">View Requirements</a>
+                    </div>
+                </div>
+                
+                <!-- Electrical Permit -->
+                <div class="permit-card">
+                    <img src="requirements/electrical-permit.png" alt="Electrical technicians installing wiring in a new residential building in Baras" class="permit-image">
+                    <div class="permit-info">
+                        <h3 class="permit-name">Electrical Permit</h3>
+                        <p class="permit-desc">Required for installation or alteration of electrical systems in buildings.</p>
+                        <a href="#electrical-permit-doc" class="btn" onclick="showDocument('Electrical Permit', 'cfei-electrical.pdf', 'pdf')">View Requirements</a>
+                    </div>
+                </div>
+                
+                <!-- Relocation Survey Permit -->
+                <div class="permit-card">
+                    <img src="requirements/relocation-survey-permit.png" alt="Surveyor working with equipment on a property relocation assessment in Baras" class="permit-image">
+                    <div class="permit-info">
+                        <h3 class="permit-name">Relocation Survey Permit</h3>
+                        <p class="permit-desc">Required when relocating structure footprints or property boundaries.</p>
+                        <a href="#relocation-survey-doc" class="btn" onclick="showDocument('Relocation Survey Permit', 'relocation.permit.pdf', 'pdf')">View Requirements</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal for document viewing -->
+        <div id="documentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3 id="modal-title" style="color: white; text-align: center; margin-bottom: 10px;"></h3>
+                <img id="modal-image" src="" alt="">
+                <iframe id="modal-pdf" src="" frameborder="0" style="display: none;"></iframe>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#faq">FAQs</a>
+            </div>
+            <p class="copyright">© 2023 Municipal Engineering Office - Municipality of Baras, Rizal. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Document viewer functionality
+        function showDocument(title, url, type) {
+            const modal = document.getElementById('documentModal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+            const modalPdf = document.getElementById('modal-pdf');
+            
+            modalTitle.textContent = title;
+            
+            if (type === 'image') {
+                modalImage.src = url;
+                modalImage.style.display = 'block';
+                modalPdf.style.display = 'none';
+            } else if (type === 'pdf') {
+                modalPdf.src = url;
+                modalPdf.style.display = 'block';
+                modalImage.style.display = 'none';
+            }
+            
+            modal.style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('documentModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('documentModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
