@@ -137,44 +137,6 @@
             height: 3px;
             background-color: var(--accent);
         }
-                    margin-top: 1rem;
-        }
-        
-        .calendar-table th {
-            background-color: var(--primary);
-            color: red;
-            padding: 1rem;
-            text-align: left;
-        }
-        
-        .calendar-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .calendar-table tr:hover {
-            background-color: var(--secondary);
-        }
-        
-        .event-highlight {
-            background-color: var(--secondary);
-            font-weight: 500;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .calendar-table {
-                display: block;
-                overflow-x: auto;
-            }
         
         .permits-grid {
             display: grid;
@@ -331,6 +293,56 @@
             height: 80vh;
             border: none;
         }
+        .announcement-list {
+    list-style: disc;
+    padding-left: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.announcement-list li {
+    margin-bottom: 0.8rem;
+}
+
+.calendar-table {
+    overflow-x: auto;
+}
+
+.calendar-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-table th, .calendar-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-table th {
+    background-color: var(--primary);
+    color: white;
+}
+
+.calendar-table tr:hover {
+    background-color: var(--secondary);
+}
+.about-content {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    color: #444;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
     </style>
 </head>
 <body>
@@ -370,7 +382,7 @@
                 <p>Dedicated to providing efficient public service and ensuring compliance with municipal ordinances for construction and development projects in Baras, Rizal.</p>
             </div>
         </section>
-                <!-- About Us Section -->
+        <!-- About Us Section -->
         <section id="about" class="container">
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
@@ -378,75 +390,14 @@
             The Municipal Engineering Office of Baras, Rizal, headed by Engr. Donna Paz M. Fullante, is responsible for the planning, implementation, and supervision of all municipal infrastructure projects. The office ensures compliance with engineering standards and national building regulations in support of the municipality’s development goals.
         </p>
     </div>
-            <section id="announcements" class="container">
-            <h2 class="section-title">Official Announcements</h2>
-            <div class="announcement-section">
-                <div class="announcement-card">
-                    <div class="announcement-date">July 25, 2023</div>
-                    <h3 class="announcement-title">New Building Permit Application Process</h3>
-                    <p>Starting August 1, all building permit applications must include the new environmental impact assessment form. Download the template from our website.</p>
-                </div>
-                
-                <div class="announcement-card">
-                    <div class="announcement-date">July 18, 2023</div>
-                    <h3 class="announcement-title">Road Construction Schedule</h3>
-                    <p>P. Burgos Street will be closed for rehabilitation from August 5-30, 2023. Alternate routes will be provided. Contact our office for business access permits.</p>
-                </div>
-                
-                <div class="announcement-card">
-                    <div class="announcement-date">July 10, 2023</div>
-                    <h3 class="announcement-title">Deadline for Fence Permit Renewals</h3>
-                    <p>All fence permit renewals for Fiscal Year 2023 must be submitted by July 31 to avoid penalties. Late submissions will incur a 5% monthly surcharge.</p>
-                </div>
-            </div>
-        </section>
-            <section id="calendar" class="container">
-            <h2 class="section-title">Calendar of Activities</h2>
-            <div class="calendar-section">
-                <table class="calendar-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Activity</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                                    <tr class="event-highlight">
-                            <td>August 2, 2023</td>
-                            <td>Public Consultation - Infrastructure Development Plan</td>
-                            <td>Upcoming</td>
-                        </tr>
-                        <tr>
-                            <td>August 7-11, 2023</td>
-                            <td>Annual Building Safety Inspection</td>
-                            <td>Scheduled</td>
-                        </tr>
-                        <tr>
-                            <td>August 15, 2023</td>
-                            <td>Deadline: Subdivision Development Plan Submission</td>
-                            <td>Cut-off</td>
-                        </tr>
-                        <tr>
-                            <td>August 20-30, 2023</td>
-                            <td>Bridge Maintenance Works</td>
-                            <td>Ongoing</td>
-                        </tr>
-                        <tr>
-                            <td>September 5, 2023</td>
-                            <td>Engineers' Forum</td>
-                            <td>Registration Open</td>
-                        </tr>
-                    </tbody>
-                </table>
-             </div>
-          </section>
+</section>
+        
         <section id="permits" class="container">
             <h2 class="section-title">Available Permits</h2>
             <div class="permits-grid">
                 <!-- Building Permit -->
                 <div class="permit-card">
-                    <img src="building permit new.jpg" alt="Construction workers at a building site in Baras, Rizal with partially completed residential structure in background" class="permit-image">
+                    <img src="requirements/building-permit.png" alt="Construction workers at a building site in Baras, Rizal with partially completed residential structure in background" class="permit-image">
                     <div class="permit-info">
                         <h3 class="permit-name">Building Permit</h3>
                         <p class="permit-desc">Required for construction, alteration, or repair of buildings within Baras municipality.</p>
@@ -456,7 +407,7 @@
                 
                 <!-- Occupancy Permit -->
                 <div class="permit-card">
-                    <img src="occupancy-permit.png" alt="Modern residential home in Baras, Rizal ready for occupancy with landscaped front yard" class="permit-image">
+                    <img src="requirements/occupancy-permit.png" alt="Modern residential home in Baras, Rizal ready for occupancy with landscaped front yard" class="permit-image">
                     <div class="permit-info">
                         <h3 class="permit-name">Occupancy Permit</h3>
                         <p class="permit-desc">Certifies that a building complies with codes and is ready for occupancy.</p>
@@ -466,7 +417,7 @@
                 
                 <!-- Fencing Permit -->
                 <div class="permit-card">
-                    <img src="fencing-permit.jpg" alt="Newly constructed perimeter fence around a property in Baras showing typical fencing materials" class="permit-image">
+                    <img src="requirements/fencing-permit.jpg" alt="Newly constructed perimeter fence around a property in Baras showing typical fencing materials" class="permit-image">
                     <div class="permit-info">
                         <h3 class="permit-name">Fencing Permit</h3>
                         <p class="permit-desc">Required for construction of fences around properties in Baras municipality.</p>
@@ -476,7 +427,7 @@
                 
                 <!-- Ground Preparation Permit -->
                 <div class="permit-card">
-                    <img src="ground-preparation.jpg" alt="Excavation equipment preparing a construction site in Baras showing grading work" class="permit-image">
+                    <img src="requirements/ground-preparation.jpg" alt="Excavation equipment preparing a construction site in Baras showing grading work" class="permit-image">
                     <div class="permit-info">
                         <h3 class="permit-name">Ground Preparation Permit</h3>
                         <p class="permit-desc">Required for land grading, excavation, backfilling, leveling and site preparation activities.</p>
@@ -486,7 +437,7 @@
                 
                 <!-- Electrical Permit -->
                 <div class="permit-card">
-                    <img src="electrical-permit.png" alt="Electrical technicians installing wiring in a new residential building in Baras" class="permit-image">
+                    <img src="requirements/electrical-permit.png" alt="Electrical technicians installing wiring in a new residential building in Baras" class="permit-image">
                     <div class="permit-info">
                         <h3 class="permit-name">Electrical Permit</h3>
                         <p class="permit-desc">Required for installation or alteration of electrical systems in buildings.</p>
@@ -496,14 +447,54 @@
                 
                 <!-- Relocation Survey Permit -->
                 <div class="permit-card">
-                    <img src="relocation-survey-permit.png" alt="Surveyor working with equipment on a property relocation assessment in Baras" class="permit-image">
+                    <img src="requirements/relocation-survey-permit.png" alt="Surveyor working with equipment on a property relocation assessment in Baras" class="permit-image">
                     <div class="permit-info">
                         <h3 class="permit-name">Relocation Survey Permit</h3>
                         <p class="permit-desc">Required when relocating structure footprints or property boundaries.</p>
                         <a href="#relocation-survey-doc" class="btn" onclick="showDocument('Relocation Survey Permit', 'relocation.permit.pdf', 'pdf')">View Requirements</a>
                     </div>
                 </div>
-            </div>
+                <!-- Announcements Section -->
+        <section id="announcements" class="container">
+            <h2 class="section-title">Announcements</h2>
+            <ul class="announcement-list">
+                <li><strong>July 15, 2025:</strong> Scheduled maintenance of Baras Municipal Hall Electrical System.</li>
+                <li><strong>July 20, 2025:</strong> Deadline for submission of Building Permit applications for Q3.</li>
+                <li><strong>Ongoing:</strong> ANG GANDA NI AUREA LORRAINE D.M. SAN JUAN MASIKIP</li>
+            </ul>
+        </section>
+
+<!-- Calendar of Activities Section -->
+       <section id="calendar" class="container">
+        <h2 class="section-title">Calendar of Activities</h2>
+        <div class="calendar-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Activity</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>July 15, 2025</td>
+                        <td>Electrical System Maintenance</td>
+                        <td>Municipal Hall</td>
+                    </tr>
+                    <tr>
+                        <td>July 20, 2025</td>
+                        <td>Permit Submission Deadline</td>
+                        <td>Engineering Office</td>
+                    </tr>
+                    <tr>
+                        <td>July 25, 2025</td>
+                        <td>Public Consultation on Drainage Plan</td>
+                        <td>Brgy. Hall, Pinugay</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         
         <!-- Modal for document viewing -->
         <div id="documentModal" class="modal">
