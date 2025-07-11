@@ -293,6 +293,45 @@
             height: 80vh;
             border: none;
         }
+        .announcement-list {
+    list-style: disc;
+    padding-left: 2rem;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.announcement-list li {
+    margin-bottom: 0.8rem;
+}
+
+.calendar-table {
+    overflow-x: auto;
+}
+
+.calendar-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-table th, .calendar-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-table th {
+    background-color: var(--primary);
+    color: white;
+}
+
+.calendar-table tr:hover {
+    background-color: var(--secondary);
+}
+
     </style>
 </head>
 <body>
@@ -319,6 +358,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#permits">Permit Requirements</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -393,8 +436,47 @@
                         <a href="#relocation-survey-doc" class="btn" onclick="showDocument('Relocation Survey Permit', 'relocation.permit.pdf', 'pdf')">View Requirements</a>
                     </div>
                 </div>
-            </div>
+                <!-- Announcements Section -->
+        <section id="announcements" class="container">
+            <h2 class="section-title">Announcements</h2>
+            <ul class="announcement-list">
+                <li><strong>July 15, 2025:</strong> Scheduled maintenance of Baras Municipal Hall Electrical System.</li>
+                <li><strong>July 20, 2025:</strong> Deadline for submission of Building Permit applications for Q3.</li>
+                <li><strong>Ongoing:</strong> ANG GANDA NI AUREA LORRAINE D.M. SAN JUAN MASIKIP</li>
+            </ul>
         </section>
+
+<!-- Calendar of Activities Section -->
+       <section id="calendar" class="container">
+        <h2 class="section-title">Calendar of Activities</h2>
+        <div class="calendar-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Activity</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>July 15, 2025</td>
+                        <td>Electrical System Maintenance</td>
+                        <td>Municipal Hall</td>
+                    </tr>
+                    <tr>
+                        <td>July 20, 2025</td>
+                        <td>Permit Submission Deadline</td>
+                        <td>Engineering Office</td>
+                    </tr>
+                    <tr>
+                        <td>July 25, 2025</td>
+                        <td>Public Consultation on Drainage Plan</td>
+                        <td>Brgy. Hall, Pinugay</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         
         <!-- Modal for document viewing -->
         <div id="documentModal" class="modal">
