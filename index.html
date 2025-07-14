@@ -534,25 +534,52 @@
     </footer>
     
     <script>
-       function showDocument(title, url, type) {
-    if (type === 'pdf') {
-        window.open(url, '_blank');
+      // Document viewer functionality
+        function showDocument(title, url, type) {
+            const modal = document.getElementById('documentModal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+            const modalPdf = document.getElementById('modal-pdf');
+            
+            modalTitle.textContent = title;
+            
+            if (type === 'image') {
+                modalImage.src = url;
+                modalImage.style.display = 'block';
+                modalPdf.style.display = 'none';
+            } else if (type === 'pdf') {
+                window.open(url, '_blank');
         return;
-    }
-
-    const modal = document.getElementById('documentModal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalImage = document.getElementById('modal-image');
-    const modalPdf = document.getElementById('modal-pdf');
-
-    modalTitle.textContent = title;
-
-    if (type === 'image') {
-        modalImage.src = url;
-        modalImage.style.display = 'block';
-        modalPdf.style.display = 'none';
-        modal.style.display = 'block';
-    }
+               
+            }
+            
+            modal.style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('documentModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('documentModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
 }
         });
     </script>
