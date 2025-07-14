@@ -548,9 +548,9 @@
                 modalImage.style.display = 'block';
                 modalPdf.style.display = 'none';
             } else if (type === 'pdf') {
-                window.open(url, '_blank');
-        return;
-               
+                modalPdf.src = url;
+                modalPdf.style.display = 'block';
+                modalImage.style.display = 'none'
             }
             
             modal.style.display = 'block';
