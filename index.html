@@ -349,7 +349,44 @@
 }
 .section-spacing {
     margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem; 
+}
+        .burger {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+        position: absolute;
+        top: 1.2rem;
+        right: 2rem;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav {
+        position: relative;
+    }
     </style>
     </head>
 <body>
@@ -372,6 +409,7 @@
     </header>
           
     <nav>
+        <button class="burger" onclick="toggleMenu()">☰</button>
         <div class="container">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -456,6 +494,7 @@
                         <h3 class="permit-name">Building Permit</h3>
                         <p class="permit-desc">Required for construction, alteration, or repair of buildings within Baras municipality.</p>
                         <a href="#building-permit-doc" class="btn" onclick="showDocument('Building Permit', 'building.permit.pdf', 'pdf')">View Requirements</a>
+                        <a href="building.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
                     </div>
                 </div>
                 
@@ -466,6 +505,7 @@
                         <h3 class="permit-name">Occupancy Permit</h3>
                         <p class="permit-desc">Certifies that a building complies with codes and is ready for occupancy.</p>
                         <a href="#occupancy-permit-doc" class="btn" onclick="showDocument('Occupancy Permit', 'occupancy.permit.pdf', 'pdf')">View Requirements</a>
+                        <a href="occupancy.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
                     </div>
                 </div>
                 
@@ -476,6 +516,7 @@
                         <h3 class="permit-name">Fencing Permit</h3>
                         <p class="permit-desc">Required for construction of fences around properties in Baras municipality.</p>
                         <a href="#fencing-permit-doc" class="btn" onclick="showDocument('Fencing Permit', 'fencing.permit.pdf', 'pdf')">View Requirements</a>
+                        <a href="fencing.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
                     </div>
                 </div>
                 
@@ -486,6 +527,7 @@
                         <h3 class="permit-name">Ground Preparation Permit</h3>
                         <p class="permit-desc">Required for land grading, excavation, backfilling, leveling and site preparation activities.</p>
                         <a href="#ground-prep-permit-doc" class="btn" onclick="showDocument('Ground Preparation Permit', 'gnd-prep.pdf', 'pdf')">View Requirements</a>
+                        <a href="gnd-prep.pdf" class="btn" download style="margin-left: 10px;">Download</a>
                     </div>
                 </div>
                 
@@ -496,6 +538,7 @@
                         <h3 class="permit-name">Electrical Permit</h3>
                         <p class="permit-desc">Required for installation or alteration of electrical systems in buildings.</p>
                         <a href="#electrical-permit-doc" class="btn" onclick="showDocument('Electrical Permit', 'cfei-electrical.pdf', 'pdf')">View Requirements</a>
+                        <a href="cfei-electrical.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
                     </div>
                 </div>
                 
@@ -506,6 +549,7 @@
                         <h3 class="permit-name">Relocation Survey Permit</h3>
                         <p class="permit-desc">Required when relocating structure footprints or property boundaries.</p>
                         <a href="#relocation-survey-doc" class="btn" onclick="showDocument('Relocation Survey Permit', 'relocation.permit.pdf', 'pdf')">View Requirements</a>
+                        <a href="relocation.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
                     </div>
                 </div>
             </div>
@@ -537,6 +581,8 @@
     </footer>
     
     <script>
+        function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
       // Document viewer functionality
         function showDocument(title, url, type) {
             const modal = document.getElementById('documentModal');
