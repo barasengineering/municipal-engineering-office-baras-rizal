@@ -387,6 +387,8 @@
     nav {
         position: relative;
     }
+}
+    
     </style>
     </head>
 <body>
@@ -409,8 +411,8 @@
     </header>
           
     <nav>
-        <button class="burger" onclick="toggleMenu()">☰</button>
         <div class="container">
+            <button class="burger" onclick="toggleMenu()">☰</button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#announcements">Announcements</a></li>
@@ -493,7 +495,7 @@
                     <div class="permit-info">
                         <h3 class="permit-name">Building Permit</h3>
                         <p class="permit-desc">Required for construction, alteration, or repair of buildings within Baras municipality.</p>
-                        <a href="building.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
+                        <a href="building.permit.pdf" class="btn" download style="margin-left: 10px;">Download Requirements</a>
                     </div>
                 </div>
                 
@@ -503,7 +505,7 @@
                     <div class="permit-info">
                         <h3 class="permit-name">Occupancy Permit</h3>
                         <p class="permit-desc">Certifies that a building complies with codes and is ready for occupancy.</p>
-                        <a href="occupancy.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
+                        <a href="occupancy.permit.pdf" class="btn" download style="margin-left: 10px;">Download Requirements</a>
                     </div>
                 </div>
                 
@@ -513,7 +515,7 @@
                     <div class="permit-info">
                         <h3 class="permit-name">Fencing Permit</h3>
                         <p class="permit-desc">Required for construction of fences around properties in Baras municipality.</p>
-                        <a href="fencing.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
+                        <a href="fencing.permit.pdf" class="btn" download style="margin-left: 10px;">Download Requirements</a>
                     </div>
                 </div>
                 
@@ -523,7 +525,7 @@
                     <div class="permit-info">
                         <h3 class="permit-name">Ground Preparation Permit</h3>
                         <p class="permit-desc">Required for land grading, excavation, backfilling, leveling and site preparation activities.</p>
-                        <a href="gnd-prep.pdf" class="btn" download style="margin-left: 10px;">Download</a>
+                        <a href="gnd-prep.pdf" class="btn" download style="margin-left: 10px;">Download Requiremnents</a>
                     </div>
                 </div>
                 
@@ -533,7 +535,7 @@
                     <div class="permit-info">
                         <h3 class="permit-name">Electrical Permit</h3>
                         <p class="permit-desc">Required for installation or alteration of electrical systems in buildings.</p>
-                        <a href="cfei-electrical.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
+                        <a href="cfei-electrical.permit.pdf" class="btn" download style="margin-left: 10px;">Download Requirements</a>
                     </div>
                 </div>
                 
@@ -543,7 +545,7 @@
                     <div class="permit-info">
                         <h3 class="permit-name">Relocation Survey Permit</h3>
                         <p class="permit-desc">Required when relocating structure footprints or property boundaries.</p>
-                        <a href="relocation.permit.pdf" class="btn" download style="margin-left: 10px;">Download</a>
+                        <a href="relocation.permit.pdf" class="btn" download style="margin-left: 10px;">Download Requirements</a>
                     </div>
                 </div>
             </div>
@@ -577,6 +579,7 @@
     <script>
         function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
+        }
       // Document viewer functionality
         function showDocument(title, url, type) {
             const modal = document.getElementById('documentModal');
